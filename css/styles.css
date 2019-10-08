@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'digital';
+	src: url('fonts/digital-7.ttf');
+}
+
+body, html {
+  height: 100%;
+}
+
+.h-1 {
+	/* Height 1/12 */
+	height: 8.3333333%;
+}
+
+.h-2 {
+	height: 16.6666667%;
+}
+
+.h-4 {
+	height: 33.3333333%;
+}
+
+.btn {
+	height: 100%;
+	width: 100%;
+	font-size: 2.2em;
+}
+
+.calc-btn {
+	padding: 5px;
+}
+
+#display, #calc {
+	font-family: 'digital';
+	font-size: 2.2em;
+	color: white;
+	padding: 5px;
+	background-color: black;
+	margin: auto;
+	line-height: 24px;
+}
+
+.calculator {
+	background-color: grey;
+	padding: 0px;
+}
