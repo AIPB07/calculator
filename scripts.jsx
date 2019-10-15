@@ -13,20 +13,16 @@ let result = 0; // For storing result of calculation
 
 
 // Function to perform calculations
-const operate = function(operandOne, operandTwo, operator) {
+const operate = (operandOne, operandTwo, operator) => {
 	switch(operator) {
 		case "add":
 			return operandOne + operandTwo;
-			break;
 		case "subtract":
 			return operandOne - operandTwo;
-			break;
 		case "multiply":
 			return operandOne * operandTwo;
-			break;
 		case "divide":
 			return operandOne / operandTwo;
-			break;
 		default:
 			return 0;		
 	};
@@ -37,14 +33,9 @@ class Controller extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = defaultState;	
-		this.handleNumberClick = this.handleNumberClick.bind(this);
-		this.handleOperatorClick = this.handleOperatorClick.bind(this);
-		this.handleClearClick = this.handleClearClick.bind(this);
-		this.handleDecimalClick = this.handleDecimalClick.bind(this);
-		this.handleEqualsClick = this.handleEqualsClick.bind(this);
 	}
 
-	handleNumberClick(event) {
+	handleNumberClick = (event) => {
 		// Store value of number
 		let value = event.target.innerHTML;
 		// Will only effect activeNum
@@ -63,7 +54,7 @@ class Controller extends React.Component {
 		newNum = false;
 	}
 
-	handleOperatorClick(event) {
+	handleOperatorClick = (event) => {
 		// Remember operator symbol for calcString
 		let symbol = event.target.innerHTML;
 		// Handle two operators pressed in succession
@@ -103,7 +94,7 @@ class Controller extends React.Component {
 		}
 	}
 
-	handleDecimalClick() {
+	handleDecimalClick = () => {
 		if (!decimalClicked) {
 			this.setState ({
 				activeNum: this.state.activeNum + "."
@@ -112,7 +103,7 @@ class Controller extends React.Component {
 		}
 	}
 
-	handleClearClick() {
+	handleClearClick = () => {
 		// Reset state and global values
 		this.setState(defaultState);
 		firstOperator = true;
@@ -120,7 +111,7 @@ class Controller extends React.Component {
 		decimalClicked = false;
 	}
 
-	handleEqualsClick() {
+	handleEqualsClick = () => {
 		if (this.state.calcString != '') {
 			let result = operate(this.state.sum, Number(this.state.activeNum), this.state.activeOperator);
 			console.log(result);
